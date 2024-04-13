@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tax Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="container_h1">Tax Calculator</h1>
+        <form id="tax-form">
+            <div class="mb-3">
+                <label for="income" class="form-label">Gross Annual Income</label>
+                <span class="tooltip-icon"><i class="fa fa-question-circle"></i>
+                    <div class="tooltip-text">Enter total annual income before deductions.</div>
+                </span>
+                <input type="text" class="form-control" id="income" name="income">
+                <div class="invalid-feedback">Please enter a valid number.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="extra-income" class="form-label">Extra Income</label>
+                <span class="tooltip-icon"><i class="fa fa-question-circle"></i>
+                    <div class="tooltip-text">Enter additional income like interest, dividends, etc.</div>
+                </span>
+                <input type="text" class="form-control" id="extra-income" name="extra-income">
+                <div class="invalid-feedback">Please enter a valid number.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="deductions" class="form-label">Deductions</label>
+                <span class="tooltip-icon"><i class="fa fa-question-circle"></i>
+                    <div class="tooltip-text">Enter expenses deducted from your income like retirement contributions.</div>
+                </span>
+                <input type="text" class="form-control" id="deductions" name="deductions">
+                <div class="invalid-feedback">Please enter a valid number.</div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="age-group" class="form-label">Age Group</label>
+                <select class="form-select" id="age-group" name="age-group">
+                    <option value="">Select Age Group</option>
+                    <option value="below-40">< 40</option>
+                    <option value="40-60">≥ 40 & < 60</option>
+                    <option value="60-plus">≥ 60</option>
+                </select>
+                <span class="error-icon">!</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="resultModalLabel">Tax Result</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="result-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
